@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 exports.handler = async (event, context) => {
-  const category = event.queryStringParameters.city || 'london';
+  const category = event.queryStringParameters.category || 'success';
 
   try {
     const response = await axios.get('https://api.api-ninjas.com/v1/quotes', {
