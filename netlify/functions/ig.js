@@ -1,10 +1,10 @@
 const instagram = require('info-instagram');
 
-await instagram.authenticate('elyagoubiabdessattar', 'Simou2007');
+
 
 exports.handler = async (event, context) => {
   const username = event.queryStringParameters.username;
-
+await instagram.authenticate('elyagoubiabdessattar', 'Simou2007');
   instagram.getUserData(username).then(info => {
 
   const data = {
