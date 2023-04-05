@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
   const query = 'filetype:${filetype} ' + query2;
   try {
     const results = await googleIt({
-      query: query,
+      query: query2,
       limit: limit
     });
     return {
