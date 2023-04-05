@@ -1,16 +1,15 @@
+"use strict";
+exports.handler = async (event, context) => {
 const instagram = require('info-instagram');
 
-
-
-exports.handler = async (event, context) => {
-  const username = event.queryStringParameters.username;
+const username = event.queryStringParameters.username;
 await instagram.authenticate('elyagoubiabdessattar', 'Simou2007');
-  instagram.getUserData(username).then(info => {
+instagram.getUserData(username).then(info => {
 
   const data = {
     fullname: info.getFullName(),
     username: info.getUsername(),
-    followers: info.ggetFollowersCount(),
+    followers: info.getFollowersCount(),
     following: info.getFollowingCount(),
     biographie: info.getBiography(),
     media: info.getMedias(),
