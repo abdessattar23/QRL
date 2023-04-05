@@ -1,8 +1,8 @@
 const googleIt = require('google-it');
 
 exports.handler = async (event, context) => {
-  const query2 = event.queryStrinParameters.query || 'javascript';
-  const limit = event.queryStrinParameters.limit || 10;
+  const query2 = event.queryStringParameters.query || 'javascript';
+  const limit = event.queryStringParameters.limit || 10;
   const query = 'filetype:pdf' + query2;
   try {
     const results = await googleIt({
