@@ -1,20 +1,13 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 
 exports.handler = async function (event, context) {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   try {
-    // Get the URL from the query parameters
-    const url = event.queryStringParameters.url;
-
-    // Navigate to the URL
+    const url = event.queryStringParameters.url || 'https://wikiweather.netlify.app';
     await page.goto(url);
-
-    // Generate PDF
     const pdfBuffer = await page.pdf({ format: 'Letter' });
-
-    // Return the PDF as a response
     return {
       statusCode: 200,
       headers: {
