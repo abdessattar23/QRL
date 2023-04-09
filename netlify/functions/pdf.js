@@ -16,18 +16,19 @@ exports.handler = async function (event, context) {
     },
   };
 
-  const pdf = pdfmake.createPdf(docDefinition);
-
-  return new Promise((resolve, reject) => {
-    pdf.getBuffer((buffer) => {
-      resolve({
-        statusCode: 200,
-        headers: {
-          'Content-Type': 'application/pdf',
-        },
-        body: buffer.toString('base64'),
-        isBase64Encoded: true,
-      });
+  const pdfDoc = pdfmake(docDefinition);
+  const buffer = await new Promise((resolve, reject) => {
+    pdfDoc.getBuffer((buffer) => {
+      resolve(buffer);
     });
   });
+
+  return {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/pdf',
+    },
+    body: buffer.toString('base64'),
+    isBase64Encoded: true,
+  };
 };
