@@ -4,6 +4,6 @@
   "dependencies": {
     "axios": "^0.24.0",
     "google-it": "^1.1.1",
-    "info-instagram": "1.0.0"
+    "puppeteer": "^10.0.0"
   }
 }
