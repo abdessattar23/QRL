@@ -4,6 +4,6 @@
   "dependencies": {
     "axios": "^0.24.0",
     "google-it": "^1.1.1",
-    "puppeteer": "^19.8.4"
+    "puppeteer-core": "^19.8.4"
   }
 }
