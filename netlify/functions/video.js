@@ -11,8 +11,10 @@ exports.handler = async (event, context) => {
       query: query,
       limit: limit
     });
+    const img ='';
  axios.get("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvPh3UbRCrXbTspsFbzmb100fXVRz_w3buuqKJDbN5&s").then((response) => {
-  const img = response;
+   console.log(response);
+     img = response;
 }, (error) => {
   console.log(error);
 });
