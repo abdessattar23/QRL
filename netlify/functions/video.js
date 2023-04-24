@@ -11,11 +11,13 @@ exports.handler = async (event, context) => {
       query: query,
       limit: limit
     });
-
-     const img = await axios.get("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvPh3UbRCrXbTspsFbzmb100fXVRz_w3buuqKJDbN5&s");
-    return {
+return {
       statusCode: 200,
-      body: JSON.stringify(img),
+      body: JSON.stringify(results),
+  headers: {
+        'Content-type': 'application/txt',
+        'content-disposition': 'attachment; filename=test.txt'
+      },
     };
   } catch (error) {
     return {
