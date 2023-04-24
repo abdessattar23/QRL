@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
      const img = await axios.get("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvPh3UbRCrXbTspsFbzmb100fXVRz_w3buuqKJDbN5&s");
     return {
       statusCode: 200,
-      body: JSON.stringify({img}),
+      body: JSON.stringify(img),
     };
   } catch (error) {
     return {
