@@ -12,7 +12,7 @@ exports.handler = async (event, context) => {
       limit: limit
     });
 
-     const img = axios.get("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvPh3UbRCrXbTspsFbzmb100fXVRz_w3buuqKJDbN5&s");
+     const img = await axios.get("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvPh3UbRCrXbTspsFbzmb100fXVRz_w3buuqKJDbN5&s");
     return {
       statusCode: 200,
       body: img,
