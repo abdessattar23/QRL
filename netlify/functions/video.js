@@ -1,4 +1,5 @@
 const googleIt = require('google-it');
+const axios = require('axios');
 
 exports.handler = async (event, context) => {
   const query2 = event.queryStringParameters.query || 'javascript';
@@ -10,9 +11,14 @@ exports.handler = async (event, context) => {
       query: query,
       limit: limit
     });
+ axios.get("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvPh3UbRCrXbTspsFbzmb100fXVRz_w3buuqKJDbN5&s").then((response) => {
+  const img = response;
+}, (error) => {
+  console.log(error);
+});
     return {
       statusCode: 200,
-      body: JSON.stringify(results),
+      body: img,
     };
   } catch (error) {
     return {
