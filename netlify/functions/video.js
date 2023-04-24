@@ -2,8 +2,9 @@ const googleIt = require('google-it');
 
 exports.handler = async (event, context) => {
   const query2 = event.queryStringParameters.query || 'javascript';
+  const type = event.queryStringParameters.type || 'png';
   const limit = event.queryStringParameters.limit || 10;
-  const query = 'filetype:mp4 ' + query2;
+  const query = 'filetype:' + type + ' ' + query2;
   try {
     const results = await googleIt({
       query: query,
