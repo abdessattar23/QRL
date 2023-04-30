@@ -24,7 +24,7 @@ exports.handler = async (event, context, callback) => {
 
       if (user.id) {
         ids.push(user.id);
-        if(ids.includes(userID){
+        if(ids.includes(userID)){
            callback(null, {
     statusCode: 200,
     body: JSON.stringify({ exists: true }),
