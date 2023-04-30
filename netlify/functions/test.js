@@ -32,7 +32,7 @@ exports.handler = async (event, context, callback) => {
            }else{
               callback(null, {
     statusCode: 404,
-    body: JSON.stringify({ ids }),
+    body: JSON.stringify({ exists: false }),
   });                 
 }
       }
